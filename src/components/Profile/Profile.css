@@ -1,0 +1,5 @@
+.background-user {
+    background-image: url("../../assets/images/backgound.png");
+    background-size: cover; /* Ajuste l'image pour couvrir la section */
+    height:380px;
+}

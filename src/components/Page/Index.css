@@ -234,7 +234,100 @@
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
   }
+
+   /* Button Section
+  ================================================== */
+
+  .custom-btn {
+    color: var(--black);
+    font-size: var(--fs-9);
+    font-weight: var(--fw-500);
+    background: hsla(218, 50%, 14%, 0.1);
+    max-height: 70px;
+    min-width: 130px;
+    padding: 10px 15px;
+    border: 1px solid var(--golden-puppy);
+    border-radius: 4px;
+}
+
+.custom-btn:hover {
+    background-color: #0b5ed7;
+    border-color: #0a58ca;
+}
+
+.custom-btn:focus {
+    background-color: #0b5ed7;
+    border-color: #0a58ca;
+    box-shadow: 0 0 0 0.25rem rgba(49, 132, 253, 0.5);
+}
+
+
+
+
+ 
+
+.custom-images img {
+    width: 80px ;
+    max-height: 200px ;
+    border-radius: 10px ;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2) ;
+}
+
+
   
+.search-input {
+  border-radius: 20px 0 0 20px;
+  border: 1px solid #ced4da;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  background-color: #f8f9fa;
+  color: #333;
+
+}
+
+.search-input:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+  outline: none;
+}
+
+.search-btn {
+  border-radius: 20px 0 0 20px;
+  background-color: #007bff;
+  border: none;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.search-btn:hover {
+  background-color: #0056b3;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+.suggestions-dropdown {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  overflow: hidden;
+  z-index: 1000;
+  margin-top: 5px;
+}
+
+.suggestion-item {
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  color: #495057;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.suggestion-item:hover {
+  background-color: #e9ecef;
+}
   
   
   @media screen and (max-width: 1024px) {
@@ -280,6 +373,8 @@
       display: none;
     }
   }
+
+
   .text-home{
     background: -webkit-linear-gradient(#46CDD0, #eee);
     -webkit-background-clip: text;

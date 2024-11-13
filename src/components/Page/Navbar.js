@@ -187,7 +187,7 @@ export default function Navbar({ page, inscription }) {
                     }}
                   >
                     MMD Statistica
-                  </span>{" "}
+                  </span>
                 </Link>
               </ul>
               <div
@@ -200,8 +200,18 @@ export default function Navbar({ page, inscription }) {
                 <span style={{ background: "white" }}></span>
               </div>
 
-              <div class=" " style={{ marginTop: "25px" }}>
-                <ul className={menuOpen ? "open" : "noOpen"}>
+              <div
+                class=" "
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  marginTop: "25px",
+                }}
+              >
+                <ul
+                  className={menuOpen ? "open" : "noOpen"}
+                  style={{ flex: 1 }}
+                >
                   <li>
                     <NavLink
                       to="#"
@@ -212,7 +222,6 @@ export default function Navbar({ page, inscription }) {
 
                     <ul class="dropdown">
                       <li>
-                        {" "}
                         <NavLink
                           to="/filter"
                           style={{
@@ -223,7 +232,6 @@ export default function Navbar({ page, inscription }) {
                         </NavLink>
                       </li>
                       <li>
-                        {" "}
                         <NavLink
                           to="/categories"
                           style={{
@@ -266,13 +274,13 @@ export default function Navbar({ page, inscription }) {
 
 </div> */}
                   </li>
+                </ul>
+
+                <div style={{ display: "flex", gap: "15px" }}>
                   {localStorage.getItem("id") == null && (
                     <>
-                      <li>
-                        <div
-                          className=""
-                          style={{ fontSize: "14px", color: "white" }}
-                        >
+                      
+                  
                           <NavLink
                             className={
                               buttonClick === 0 ? "button11-border white" : ""
@@ -290,14 +298,9 @@ export default function Navbar({ page, inscription }) {
                           >
                             Inscription
                           </NavLink>
-                        </div>{" "}
-                      </li>
+                        
 
-                      <li>
-                        <div
-                          className=""
-                          style={{ fontSize: "14px", color: "white" }}
-                        >
+                      
                           <NavLink
                             className={
                               buttonClick === 1 ? "button11-border white" : ""
@@ -315,13 +318,11 @@ export default function Navbar({ page, inscription }) {
                           >
                             Connexion
                           </NavLink>
-                        </div>{" "}
-                      </li>
                     </>
                   )}
                   {localStorage.getItem("id") != null && (
                     <>
-                      <li className="mt-2 me-4">
+                     
                         <div
                           class="shpping-cart"
                           onClick={() => {
@@ -333,12 +334,11 @@ export default function Navbar({ page, inscription }) {
                             cursor: "pointer",
                           }}
                         >
-                          <div class="">
-                            {" "}
+                          
                             <i
                               class="fa fa-shopping-cart "
                               style={{ fontSize: "18px" }}
-                            ></i>{" "}
+                            ></i>
                             <strong
                               class=""
                               style={{
@@ -355,15 +355,13 @@ export default function Navbar({ page, inscription }) {
                                 borderRadius: "50%",
                               }}
                             >
-                              {" "}
+                              
                               {!localStorage.getItem("cart") && <span>0</span>}
                               {localStorage.getItem("cart") && <span>3</span>}
                             </strong>
                           </div>
-                        </div>
-                      </li>
-
-                      <li className="mt-2 me-4">
+                        
+                  
                         <div
                           class="shpping-cart"
                           onClick={() => {
@@ -375,15 +373,13 @@ export default function Navbar({ page, inscription }) {
                             cursor: "pointer",
                           }}
                         >
-                          <div class="">
-                            {" "}
+                          
                             <i
                               class="fa fa-solid fa-user "
                               style={{ fontSize: "20px" }}
-                            ></i>{" "}
+                            ></i>
                           </div>
-                        </div>
-                      </li>
+                        
 
                       <li className="mt-2">
                         <div
@@ -410,7 +406,7 @@ export default function Navbar({ page, inscription }) {
                       </li>
                     </>
                   )}
-                </ul>
+                </div>
               </div>
             </div>
           </div>

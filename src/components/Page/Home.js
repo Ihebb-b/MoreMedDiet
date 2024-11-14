@@ -8,6 +8,7 @@ import "./Index.css";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { useGetAllSuggestionsQuery } from "../../slices/searchApiSlice";
+import Map from "./map/Map";
 
 export default function Home() {
   const [inscription, setInscription] = useState(false);
@@ -20,6 +21,7 @@ export default function Home() {
   } = useGetAllSuggestionsQuery();
   const navigate = useNavigate();
   const inputRef = useRef();
+  const [countryStats, setCountryStats] = useState(null);
 
   useEffect(() => {
     if (searchQuery.trim() && allSuggestions) {
@@ -72,6 +74,13 @@ export default function Home() {
     }, 0);
   };
 
+  const fetchCountryStats = async (country) => {
+    // Placeholder URL; replace with actual endpoint
+    const response = await fetch(`/api/stats?country=${country}`);
+    const data = await response.json();
+    setCountryStats(data);
+  };
+
   const handleSearch = () => {
     if (searchQuery.trim()) {
       navigate(`/search-results?query=${encodeURIComponent(searchQuery)}`);
@@ -93,6 +102,8 @@ export default function Home() {
 
           <main>
             <article>
+
+              {/* Hero and Search Bar Section */}
               <section class="hero">
                 <div
                   style={{
@@ -103,16 +114,16 @@ export default function Home() {
                     right: 0,
                     bottom: 0,
                     height: "695px",
-                    background: `url(${require("../../assets/images/backgound.png")})`,
+                    background: `url(${require("../../assets/images/chartsBackground2.jpg")})`,
                     backgroundSize: "cover",
-                    opacity: 0.6, // Ajustez l'opacité selon vos besoins
+                    opacity: 0.8, // Ajustez l'opacité selon vos besoins
                   }}
                 ></div>
 
                 <div class="container1 container">
                   <div class="hero-content ">
                     <h1 class="h1 hero-title">
-                      <span>MMD Statistics Observatory </span>
+                      <span>MM.Diet Statistics Observatory </span>
                     </h1>
 
                     <p class="hero-text ">
@@ -121,50 +132,31 @@ export default function Home() {
                     </p>
 
                     {/* Search bar and button with enhanced styling */}
-                    <div className="flex justify-center mb-4">
-                      <div className="relative w-full max-w-lg">
-                      {/* <i class="search-icon fa fa-search"></i> */}
+                    <div className="d-flex mb-4">
+                      <div className="relative w-full max-w-3xl">
+                        <i className="search-icon fa fa-search position-absolute left-3 top-1/2 transform -translate-y-1/2 "
+                          style={{
+                            top: "67%",
+                          }}></i>
                         <input
                           type="text"
-                          className="py-2 pl-10 pr-4 border border-gray-300 shadow-sm rounded-lg focus:outline-none focus:ring focus:ring-gray-500"
+                          className="input-search-size  py-2 pl-30 pr-4 border border-gray-300 shadow-sm rounded-lg focus:outline-none focus:ring focus:ring-gray-500 text-gray-700"
                           placeholder="Enter your search..."
                           value={searchQuery}
                           onChange={(e) => setSearchQuery(e.target.value)}
                           ref={inputRef}
-                          style={{
-                            height: "50px",
-                            borderRadius: "4px",
-                            width: "100%",
-                            padding: "10px",
-                            border: "1px",
-                          }}
                         />
-
-                        <button
-                          class="custom-btn  right-1 top-2/2 transform -translate-y-1/2 py-2 px-4 bg-gray-600 rounded text-white shadow hover:bg-indigo-700 transition duration-300"
-                          onClick={handleSearch}
-                          style={{
-                            height: "50px",
-                            width: "130px",
-      
-                          }}
-                        >
-                          Search
-                        </button>
-
                         {filteredSuggestions.length > 0 && (
                           <div
-                            class="suggestions-dropdown position-absolute"
+                            className="suggestions-dropdown position-absolute left-3 top-1/2 transform -translate-y-1/2"
                             style={{
-                              top: "calc(100% + 4px)",
-                              left: "0",
-                              width: "100%",
+                              width: "400px",
                             }}
                           >
                             {filteredSuggestions.map((suggestion, index) => (
                               <div
                                 key={index}
-                                class="suggestion-item"
+                                className="suggestion-item"
                                 onClick={() =>
                                   handleSuggestionClick(suggestion)
                                 }
@@ -175,6 +167,20 @@ export default function Home() {
                           </div>
                         )}
                       </div>
+
+                      <button
+                        className="custom-btn  right-1 top-2/2 transform -translate-y-1/2 py-2 px-4 bg-gray-600 rounded text-white shadow hover:bg-indigo-700 transition duration-300"
+                        onClick={handleSearch}
+                        style={{
+                          height: "38.5px",
+                          width: "130px",
+
+                        }}
+                      >
+                        Search
+                      </button>
+
+
                     </div>
 
                     {/* <div class="btn-group">
@@ -185,19 +191,19 @@ export default function Home() {
                         "Sport practicing",
                         "Healthiest foods",
                         "Pizza consumed",
-                        "Weather and foods",
-                        "Stay slim",
-                        "Or not",
+                        "Climate and foods",
+                        "Gender distrubution",
+                        "Traditional foods",
                       ].map((filter, index) => (
                         <button
                           key={index}
                           className="custom-btn text-white rounded transition duration-300"
                           style={{
                             height: "40px",
-                            
-      
+
+
                           }}
-                        
+
                         >
                           {filter}
                         </button>
@@ -208,7 +214,7 @@ export default function Home() {
                   <div class="gallery">
                     <div class="images">
                       <img
-                        src={require("../../assets/images/plat1.jpg")}
+                        src={require("../../assets/images/diet6.jpg")}
                         alt="image"
                         style={{
                           width: "80px",
@@ -220,31 +226,31 @@ export default function Home() {
                     </div>
                     <div class="images">
                       <img
-                        src={require("../../assets/images/background1.jpg")}
+                        src={require("../../assets/images/diet2.jpg")}
                         alt="image"
                       />
                     </div>
                     <div class="images">
                       <img
-                        src={require("../../assets/images/plat2.jpg")}
+                        src={require("../../assets/images/diet1.jpg")}
                         alt="image"
                       />
                     </div>
                     <div class="images">
                       <img
-                        src={require("../../assets/images/plat3.jpg")}
+                        src={require("../../assets/images/diet3.jpg")}
                         alt="image"
                       />
                     </div>
                     <div class="images">
                       <img
-                        src={require("../../assets/images/plat4.jpg")}
+                        src={require("../../assets/images/diet4.jpg")}
                         alt="image"
                       />
                     </div>
                     <div class="images">
                       <img
-                        src={require("../../assets/images/plat5.jpg")}
+                        src={require("../../assets/images/diet5.jpg")}
                         alt="image"
                       />
                     </div>
@@ -252,10 +258,12 @@ export default function Home() {
                 </div>
               </section>
 
+
+              {/*  Most Viwed meals Section */}
               <section class="new-product">
                 <div class="container1 container ">
                   <div class="section-header-wrapper">
-                    <h2 class="h2 section-title">Newest Items</h2>
+                    <h2 class="h2 section-title">Most viewed traditional meals</h2>
 
                     <NavLink to="/marketplace">
                       <button class="btn btn-primary">View all</button>
@@ -267,8 +275,8 @@ export default function Home() {
                       <div class="product-card" tabindex="0">
                         <figure class="product-banner">
                           <img
-                            src={require("../../assets/images/plat3.jpg")}
-                            alt="Chicken Pasta"
+                            src={require("../../assets/images/couscous.jpg")}
+                            alt="Couscous"
                           />
 
                           {/*<div class="product-actions">
@@ -288,37 +296,18 @@ export default function Home() {
                         </figure>
 
                         <div class="product-content">
+
                           <NavLink to="/detailProduct">
-                            <a class="h4 product-title">Chicken Pasta</a>
+                            <a class="h4 product-title">Couscous</a>
                           </NavLink>
 
                           <div class="product-meta">
-                            <div class="product-author">
-                              <figure class="author-img">
-                                <img
-                                  src="https://raw.githubusercontent.com/codewithsadee/naft-nft_marketplace/master/assets/images/bidding-user.png"
-                                  alt="Jack Reacher"
-                                />
-                              </figure>
-
-                              <div class="author-content mt-2">
-                                <data value="Jack R">Jack R</data>
-
-                                <p class="label">@jackr</p>
-                              </div>
-                            </div>
-
-                            <div class="product-price mt-2">
-                              <data value="0.568">0.568ETH</data>
-
-                              <p class="label">Current Bid</p>
+                            <div class="mt-2 text">
+                              <p style={{ color: "white" }} >The percentage of medeterranian consumption of this item is</p>
                             </div>
                           </div>
-
                           <div class="product-footer">
-                            <p class="total-bid">12+ Place Bid.</p>
-
-                            <button class="tag">New</button>
+                            <p class="total-bid">15%</p>
                           </div>
                         </div>
                       </div>
@@ -328,8 +317,8 @@ export default function Home() {
                       <div class="product-card" tabindex="0">
                         <figure class="product-banner">
                           <img
-                            src={require("../../assets/images/plat1.jpg")}
-                            alt="Chicken Pasta"
+                            src={require("../../assets/images/harira.jpg")}
+                            alt="Harira"
                           />
 
                           <NavLink to="/detailProduct">
@@ -340,36 +329,17 @@ export default function Home() {
 
                         <div class="product-content">
                           <NavLink to="/detailProduct">
-                            <a class="h4 product-title">Chicken Pasta</a>
+                            <a class="h4 product-title">Harira</a>
                           </NavLink>
 
                           <div class="product-meta">
-                            <div class="product-author">
-                              <figure class="author-img">
-                                <img
-                                  src="https://raw.githubusercontent.com/codewithsadee/naft-nft_marketplace/master/assets/images/bidding-user.png"
-                                  alt="Jack Reacher"
-                                />
-                              </figure>
-
-                              <div class="author-content mt-2">
-                                <data value="Jack R">Jack R</data>
-
-                                <p class="label">@jackr</p>
-                              </div>
-                            </div>
-
-                            <div class="product-price">
-                              <data value="0.568">0.568ETH</data>
-
-                              <p class="label">Current Bid</p>
+                            <div class="mt-2 text">
+                              <p style={{ color: "white" }} >The percentage of medeterranian consumption of this item is</p>
                             </div>
                           </div>
 
                           <div class="product-footer">
-                            <p class="total-bid">12+ Place Bid.</p>
-
-                            <button class="tag">New</button>
+                            <p class="total-bid">20%</p>
                           </div>
                         </div>
                       </div>
@@ -379,8 +349,8 @@ export default function Home() {
                       <div class="product-card" tabindex="0">
                         <figure class="product-banner">
                           <img
-                            src={require("../../assets/images/plat2.jpg")}
-                            alt="Chicken Pasta"
+                            src={require("../../assets/images/kofte.jpg")}
+                            alt="Kofte"
                           />
 
                           <NavLink to="/detailProduct">
@@ -391,36 +361,18 @@ export default function Home() {
 
                         <div class="product-content">
                           <NavLink to="/detailProduct">
-                            <a class="h4 product-title">Chicken Pasta</a>
+                            <a class="h4 product-title">Kofte</a>
                           </NavLink>
 
                           <div class="product-meta">
-                            <div class="product-author">
-                              <figure class="author-img">
-                                <img
-                                  src="https://raw.githubusercontent.com/codewithsadee/naft-nft_marketplace/master/assets/images/bidding-user.png"
-                                  alt="Jack Reacher"
-                                />
-                              </figure>
-
-                              <div class="author-content mt-2">
-                                <data value="Jack R">Jack R</data>
-
-                                <p class="label">@jackr</p>
-                              </div>
-                            </div>
-
-                            <div class="product-price">
-                              <data value="0.568">0.568ETH</data>
-
-                              <p class="label">Current Bid</p>
+                            <div class="mt-2 text">
+                              <p style={{ color: "white" }} >The percentage of medeterranian consumption of this item is</p>
                             </div>
                           </div>
 
-                          <div class="product-footer">
-                            <p class="total-bid">12+ Place Bid.</p>
 
-                            <button class="tag">New</button>
+                          <div class="product-footer">
+                            <p class="total-bid">30%</p>
                           </div>
                         </div>
                       </div>
@@ -430,8 +382,8 @@ export default function Home() {
                       <div class="product-card" tabindex="0">
                         <figure class="product-banner">
                           <img
-                            src={require("../../assets/images/plat4.jpg")}
-                            alt="Chicken Pasta"
+                            src={require("../../assets/images/shakshouka.jpg")}
+                            alt="Shakshouka"
                           />
 
                           <NavLink to="/detailProduct">
@@ -442,36 +394,18 @@ export default function Home() {
 
                         <div class="product-content">
                           <NavLink to="/detailProduct">
-                            <a class="h4 product-title">Chicken Pasta</a>
+                            <a class="h4 product-title">Shakshouka</a>
                           </NavLink>
 
                           <div class="product-meta">
-                            <div class="product-author">
-                              <figure class="author-img">
-                                <img
-                                  src="https://raw.githubusercontent.com/codewithsadee/naft-nft_marketplace/master/assets/images/bidding-user.png"
-                                  alt="Jack Reacher"
-                                />
-                              </figure>
-
-                              <div class="author-content mt-2">
-                                <data value="Jack R">Jack R</data>
-
-                                <p class="label">@jackr</p>
-                              </div>
-                            </div>
-
-                            <div class="product-price">
-                              <data value="0.568">0.568ETH</data>
-
-                              <p class="label">Current Bid</p>
+                            <div class="mt-2 text">
+                              <p style={{ color: "white" }} >The percentage of medeterranian consumption of this item is</p>
                             </div>
                           </div>
 
                           <div class="product-footer">
-                            <p class="total-bid">12+ Place Bid.</p>
+                            <p class="total-bid">25%</p>
 
-                            <button class="tag">New</button>
                           </div>
                         </div>
                       </div>
@@ -480,12 +414,25 @@ export default function Home() {
                 </div>
               </section>
 
-              <section class="about">
-                <div class="container1 container2">
-                  <h2 class="h2 about-title">
-                    <span class="theme-color"> WALLETS</span> WE SUPPORT{" "}
+
+              <section className="about">
+                <div className="about-container">
+                  <h2 className="h2 about-title">
+                     COUNTRIES AMONG US
                   </h2>
-                  <ol class="about-list">
+                  <Map onSelectCountry={fetchCountryStats} />
+                  {countryStats && (
+                    <div className="statistics-display">
+                      {/* Render your country statistics here */}
+                      <h3>Statistics for {countryStats.country}</h3>
+                      <p>Population: {countryStats.population}</p>
+                      <p>GDP: {countryStats.gdp}</p>
+                      {/* Add more stats as needed */}
+                    </div>
+                  )}
+                </div>
+              </section>
+              {/* <ol class="about-list">
                     <li class="about-item">
                       <div class="about-card">
                         <div class="card-number">01</div>
@@ -560,9 +507,9 @@ export default function Home() {
                         <h3 class="h3 about-card-title">CoinGecko</h3>
                       </div>
                     </li>
-                  </ol>
-                </div>
-              </section>
+                  </ol> */}
+              {/* Insert the MapWithContact component here */}
+
 
               <section class="explore-product">
                 <div class="container1 container">

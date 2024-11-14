@@ -178,7 +178,12 @@ export default function Navbar({ page, inscription }) {
           <div class="row">
             <div class="col-lg-12 col-md-12 ">
               <ul class="menu-logo">
-                <Link to="/" className="title">
+                <Link to="/" className="title" >
+                  <img
+                    src="../../assets/images/logo.png" // Replace with the actual path to your logo image
+                    alt="MMD Statistica Logo"
+                    style={{ width: "40px", height: "40px", marginLeft:"2px"  }} // Adjust width, height, and spacing as needed
+                  />
                   <span
                     style={{
                       color: "white",
@@ -279,107 +284,107 @@ export default function Navbar({ page, inscription }) {
                 <div style={{ display: "flex", gap: "15px" }}>
                   {localStorage.getItem("id") == null && (
                     <>
-                      
-                  
-                          <NavLink
-                            className={
-                              buttonClick === 0 ? "button11-border white" : ""
-                            }
-                            style={{
-                              padding: "7px 10px",
-                              color: "white",
-                              borderRadius: "50px",
-                              background: buttonClick === 0 ? "#46CDD0" : "",
-                            }}
-                            onClick={() => {
-                              setButtonClick(0);
-                              handleShow();
-                            }}
-                          >
-                            Inscription
-                          </NavLink>
-                        
 
-                      
-                          <NavLink
-                            className={
-                              buttonClick === 1 ? "button11-border white" : ""
-                            }
-                            style={{
-                              padding: "7px 10px",
-                              color: "white",
-                              borderRadius: "50px",
-                              background: buttonClick === 1 ? "#46CDD0" : "",
-                            }}
-                            onClick={() => {
-                              setButtonClick(1);
-                              handleShowL();
-                            }}
-                          >
-                            Connexion
-                          </NavLink>
+
+                      <NavLink
+                        className={
+                          buttonClick === 0 ? "button11-border white" : ""
+                        }
+                        style={{
+                          padding: "7px 10px",
+                          color: "white",
+                          borderRadius: "50px",
+                          background: buttonClick === 0 ? "#46CDD0" : "",
+                        }}
+                        onClick={() => {
+                          setButtonClick(0);
+                          handleShow();
+                        }}
+                      >
+                        Inscription
+                      </NavLink>
+
+
+
+                      <NavLink
+                        className={
+                          buttonClick === 1 ? "button11-border white" : ""
+                        }
+                        style={{
+                          padding: "7px 10px",
+                          color: "white",
+                          borderRadius: "50px",
+                          background: buttonClick === 1 ? "#46CDD0" : "",
+                        }}
+                        onClick={() => {
+                          setButtonClick(1);
+                          handleShowL();
+                        }}
+                      >
+                        Connexion
+                      </NavLink>
                     </>
                   )}
                   {localStorage.getItem("id") != null && (
                     <>
-                     
-                        <div
-                          class="shpping-cart"
-                          onClick={() => {
-                            navigate("/cart");
-                          }}
+
+                      <div
+                        class="shpping-cart"
+                        onClick={() => {
+                          navigate("/cart");
+                        }}
+                        style={{
+                          color: page === "cart" ? "#46CDD0" : "white",
+                          marginLeft: "30px",
+                          cursor: "pointer",
+                        }}
+                      >
+
+                        <i
+                          class="fa fa-shopping-cart "
+                          style={{ fontSize: "18px" }}
+                        ></i>
+                        <strong
+                          class=""
                           style={{
-                            color: page === "cart" ? "#46CDD0" : "white",
-                            marginLeft: "30px",
-                            cursor: "pointer",
+                            position: "absolute",
+                            marginTop: "-5px",
+                            left: "auto",
+                            fontSize: "11px",
+                            color: "#ffffff",
+                            width: "17px",
+                            height: "17px",
+                            lineHeight: "18px",
+                            textAlign: "center",
+                            backgroundColor: "red",
+                            borderRadius: "50%",
                           }}
                         >
-                          
-                            <i
-                              class="fa fa-shopping-cart "
-                              style={{ fontSize: "18px" }}
-                            ></i>
-                            <strong
-                              class=""
-                              style={{
-                                position: "absolute",
-                                marginTop: "-5px",
-                                left: "auto",
-                                fontSize: "11px",
-                                color: "#ffffff",
-                                width: "17px",
-                                height: "17px",
-                                lineHeight: "18px",
-                                textAlign: "center",
-                                backgroundColor: "red",
-                                borderRadius: "50%",
-                              }}
-                            >
-                              
-                              {!localStorage.getItem("cart") && <span>0</span>}
-                              {localStorage.getItem("cart") && <span>3</span>}
-                            </strong>
-                          </div>
-                        
-                  
-                        <div
-                          class="shpping-cart"
-                          onClick={() => {
-                            navigate("/profile");
-                          }}
-                          style={{
-                            color: page === "profile" ? "#46CDD0" : "white",
-                            marginLeft: "30px",
-                            cursor: "pointer",
-                          }}
-                        >
-                          
-                            <i
-                              class="fa fa-solid fa-user "
-                              style={{ fontSize: "20px" }}
-                            ></i>
-                          </div>
-                        
+
+                          {!localStorage.getItem("cart") && <span>0</span>}
+                          {localStorage.getItem("cart") && <span>3</span>}
+                        </strong>
+                      </div>
+
+
+                      <div
+                        class="shpping-cart"
+                        onClick={() => {
+                          navigate("/profile");
+                        }}
+                        style={{
+                          color: page === "profile" ? "#46CDD0" : "white",
+                          marginLeft: "30px",
+                          cursor: "pointer",
+                        }}
+                      >
+
+                        <i
+                          class="fa fa-solid fa-user "
+                          style={{ fontSize: "20px" }}
+                        ></i>
+                      </div>
+
 
                       <li className="mt-2">
                         <div

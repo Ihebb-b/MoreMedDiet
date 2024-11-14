@@ -251,9 +251,9 @@
 }
 
 .custom-btn:hover {
-    background-color: #0b5ed7;
-    border-color: #0a58ca;
+  background: #46CDD0; 
 }
+
 
 .custom-btn:focus {
     background-color: #0b5ed7;
@@ -282,7 +282,7 @@
   font-size: 1rem;
   transition: border-color 0.3s, box-shadow 0.3s;
   background-color: #f8f9fa;
-  color: #333;
+  color: #323232;
 
 }
 
@@ -294,7 +294,7 @@
 
 .search-btn {
   border-radius: 20px 0 0 20px;
-  background-color: #007bff;
+  background-color: #5e5f5f;
   border: none;
   padding: 0.6rem 1rem;
   font-size: 1rem;
@@ -595,3 +595,12 @@
       }
     }
     
+
+    .input-search-size {
+      min-width: 400px;
+    }
+    @media only screen and (max-width: 700px){
+      .input-search-size {
+          min-width: 40w;
+      }
+  }

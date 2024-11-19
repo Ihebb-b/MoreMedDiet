@@ -328,6 +328,54 @@
 .suggestion-item:hover {
   background-color: #e9ecef;
 }
+.zoomable-image {
+  transform: scale(1.5); /* Scales the image by 20% */
+  
+}
+
+.marker-button {
+
+  width: 15px;
+  height: 15px;
+  background-color: gray;
+  border-radius: 50%;
+  border: 4px solid white;
+  opacity: 0.8;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  z-index: 10;
+}
+
+.marker-button:hover {
+  transform: scale(1.5); 
+  z-index: 11;
+  opacity: 1;
+}
+
+.marker-button .tooltip {
+  position: absolute;
+  bottom: 120%; /* Position above the button */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8); /* Tooltip background */
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 1; /* Hidden by default */
+  visibility: hidden;
+  z-index: 1000;
+  pointer-events: none;
+
+}
+
+.marker-button:hover .tooltip {
+  opacity: 1; /* Show tooltip on hover */
+  visibility: visible;
+  z-index: 1000;
+}
+
   
   
   @media screen and (max-width: 1024px) {

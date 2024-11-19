@@ -43,6 +43,11 @@ export const statsApiSlice = apiSlice.injectEndpoints({
       providesTags: ["AverageChildrenStatistics"],
     }),
 
+    getParticipantsByState: builder.query({
+      query: (stateName) => `${USERS_URL}/participantsByState/${stateName}`,
+      providesTags: ["StateStatistics"],
+    }),
+
     // Health and diet statistics
 
     getFruitStatisticsByCountry: builder.query({
@@ -106,4 +111,5 @@ export const {
   useGetStatisticsAverageVegetableIntakeQuery,
   useGetStatisticsVegetarianVeganPercentageQuery,
   useGetPhysicalActivityRatioQuery,
+  useGetParticipantsByStateQuery,
 } = statsApiSlice;

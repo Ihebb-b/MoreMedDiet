@@ -910,21 +910,19 @@ ol {
    * #ABOUT
   \*-----------------------------------*/
 
+
+  .about {
+    background: var(--eerie-black-2);
+    padding: 60px 0;
+  }
+
 .about-container {
-    margin: 0 auto;
-    padding: 0 15px;
+   width: 1200px;
+    height:600px;
+    align-self: center;
     
     
   }
-.about {
-  margin-top: 50px;
-  max-width: 1500px;
-  max-height: 700px;
-  justify-self: center;
-  text-align: center;
-  background-color: #807e7e;
-  border-radius: 10px;
-}
 
 .about-title {
   font-size: 2rem;
@@ -932,11 +930,7 @@ ol {
   margin-bottom: 30px;
 }
 
-.map-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-}
+
 
 .about-list {
   display: flex;
@@ -960,7 +954,7 @@ ol {
   text-align: center;
 }
 
-.about-card::before,
+/* .about-card::before,
 .about-card::after {
   content: "";
   position: absolute;
@@ -979,7 +973,7 @@ ol {
 .about-card::after {
   width: 100px;
   height: 3px;
-}
+} */
 
 .about-item:hover .about-card::before,
 .about-item:hover .about-card::after {
@@ -1693,6 +1687,7 @@ ol {
 .section-left {
   flex: 1;
   padding: 15px;
+  margin-top: 10px;
 }
 
 .banner {

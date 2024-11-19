@@ -3,6 +3,8 @@ import { Link, useNavigate, useParams, NavLink } from "react-router-dom";
 import axios from "axios";
 import "./Index.css";
 import { Modal, Button } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUsers, faUtensils } from "@fortawesome/free-solid-svg-icons";
 
 //import Global from "../../util/Global";
 
@@ -182,7 +184,7 @@ export default function Navbar({ page, inscription }) {
                   <img
                     src="../../assets/images/logo.png" // Replace with the actual path to your logo image
                     alt="MMD Statistica Logo"
-                    style={{ width: "40px", height: "40px", marginLeft:"2px"  }} // Adjust width, height, and spacing as needed
+                    style={{ width: "40px", height: "40px", marginLeft: "2px" }} // Adjust width, height, and spacing as needed
                   />
                   <span
                     style={{
@@ -220,7 +222,10 @@ export default function Navbar({ page, inscription }) {
                   <li>
                     <NavLink
                       to="#"
-                      style={{ color: page === "billet" ? "#46CDD0" : "white" }}
+                      style={{
+                        color: page === "billet" ? "#46CDD0" : "white",
+                        fontWeight: "bold",
+                      }}
                     >
                       Statistics &#x25BE;
                     </NavLink>
@@ -228,22 +233,30 @@ export default function Navbar({ page, inscription }) {
                     <ul class="dropdown">
                       <li>
                         <NavLink
-                          to="/filter"
+                          to="/demographic"
                           style={{
-                            color: page === "filter" ? "#46CDD0" : "black",
+                            color: page === "demographic" ? "#46CDD0" : "black",
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "8px",
                           }}
                         >
-                          Reports
+                          <FontAwesomeIcon icon={faUsers} style={{ color: "#46CDD0" }} /> {/* Icon */}
+                          Demograophic Statistics
                         </NavLink>
                       </li>
                       <li>
                         <NavLink
-                          to="/categories"
+                          to="/health"
                           style={{
-                            color: page === "categories" ? "#46CDD0" : "black",
+                            color: page === "health" ? "#46CDD0" : "black",
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "8px",
                           }}
                         >
-                          Forum
+                          <FontAwesomeIcon icon={faUtensils} style={{ color: "#46CDD0" }} /> {/* Icon */}
+                          Health and Diet Statistics
                         </NavLink>
                       </li>
                     </ul>
@@ -255,7 +268,7 @@ export default function Navbar({ page, inscription }) {
                         color: page === "marketplace" ? "#46CDD0" : "white",
                       }}
                     >
-                      Newest
+                      Reports
                     </NavLink>
                   </li>
                   <li>

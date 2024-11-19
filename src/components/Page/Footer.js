@@ -21,7 +21,7 @@ export default function Footer({page}) {
           <div class="row">
             <div class="col-md-6 sm-mb-10" style={{textAlign:"left",fontSize:"36px"}}>
                <p class="text-white" style={{fontWeight:"bold"}}>
-                    STAY UPTO DATE ABOUT OUR LATEST OFFERS
+                    STAY UP TO DATE ABOUT OUR LATEST STATISTICS
                    </p>         
                    </div>
                    <div class="col-md-2"> </div>
@@ -44,7 +44,7 @@ export default function Footer({page}) {
   <div class="row">
   <div class="col-lg-3 col-md-6 col-sm-6 sm-mb-30">
       <div class="footer-logo">
-        <h3 class="text-white">NFT</h3>
+        <h3 class="text-white">MMD</h3>
       </div>
        <div class="social-icons color-hover">
          <ul >
@@ -71,7 +71,7 @@ export default function Footer({page}) {
         <h6 class="text-white mb-30 mt-10 text-uppercase">Help</h6>
         <ul>
           <li><a href="#">Customer Support</a></li>
-          <li><a href="#">Delivery Details</a></li>
+          <li><a href="#">Statistics Details</a></li>
           <li><a href="#">Terms & Conditions</a></li>
           <li><a href="#">Privacy Policy</a></li>
         </ul>
@@ -82,8 +82,8 @@ export default function Footer({page}) {
         <h6 class="text-white mb-30 mt-10 text-uppercase">FAQ</h6>
         <ul>
           <li><a href="#">Account</a></li>
-          <li><a href="#">Manage Deliveries</a></li>
-          <li><a href="#">Orders</a></li>
+          <li><a href="#">Manage Statistics</a></li>
+          <li><a href="#">Reports</a></li>
           <li><a href="#">Payments</a></li>
         </ul>
       </div>
@@ -102,7 +102,7 @@ export default function Footer({page}) {
      <div class="footer-widget mt-20">
     <div class="row">
       <div class="col-md-12 text-center">
-        <p class="mt-15"> &copy;Copyright <span id="copyright"> {new Date().getFullYear()}</span> <a href="#"> NFT </a> All Rights Reserved </p>
+        <p class="mt-15"> &copy;Copyright <span id="copyright"> {new Date().getFullYear()}</span> <a href="#"> MMD </a> All Rights Reserved </p>
       </div>
      </div>
     </div>

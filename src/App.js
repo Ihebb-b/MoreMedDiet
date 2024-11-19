@@ -26,6 +26,8 @@ import Cart from './components/Marketplace/Cart.js';
 import Profile from './components/Profile/Profile.js';
 import Dashboard from './components/Dashboard/Dashboard.js';
 import MyRecipes from './components/Chefs/MyRecipes.js';
+import DemographicStatistics from './components/Page/statistics/DemographicStatistics.js';
+import HealthAndDiet from './components/Page/statistics/HealthAndDiet.js';
 function App() {
   return (
     <div className="App">
@@ -33,6 +35,8 @@ function App() {
         <Routes> 
           <Route path="/" element={<Home/>}/>
           <Route path="/marketplace" element={<Marketplace/>}/>
+          <Route path="/demographic" element={<DemographicStatistics/>}/>
+          <Route path="/health" element={<HealthAndDiet/>}/>
           <Route path="/detailProduct" element={<DetailProduct/>}/>
           <Route path="/cart" element={<Cart/>}/>
           <Route path="/profile" element={<Profile/>}/>

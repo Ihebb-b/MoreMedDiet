@@ -115,7 +115,7 @@ export default function Home() {
               <Navbar page="home" inscription={inscription} />
             </div>
           </header>
-
+       
           <main>
             <article>
               {/* Hero and Search Bar Section */}

@@ -120,7 +120,7 @@ img.bottom-img { position: absolute; bottom: 0; left: 0; right: 0;  }
 .o-hidden { overflow: hidden; }
 .position-re { position: relative; }
 .full-width{width: 100% !important;}
-section { background: black; color:white;}
+section {  color:white;}
 .shadow { box-shadow: none !important; }
 
 /*******************************************

@@ -4,7 +4,7 @@ import axios from "axios";
 import "./Index.css";
 import { Modal, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUsers, faUtensils } from "@fortawesome/free-solid-svg-icons";
+import { faUsers, faUtensils, faChartBar, faDrumstickBite, faAppleAlt  } from "@fortawesome/free-solid-svg-icons";
 
 //import Global from "../../util/Global";
 
@@ -233,6 +233,7 @@ export default function Navbar({ page, inscription }) {
                     <ul class="dropdown">
                       <li>
                         <NavLink
+                        className="nav-link"
                           to="/demographic"
                           style={{
                             color: page === "demographic" ? "#46CDD0" : "black",
@@ -241,12 +242,13 @@ export default function Navbar({ page, inscription }) {
                             gap: "8px",
                           }}
                         >
-                          <FontAwesomeIcon icon={faUsers} style={{ color: "#46CDD0" }} /> {/* Icon */}
+                          <FontAwesomeIcon className="nav-icon"  icon={faUsers} style={{ color: "#46CDD0" }} /> {/* Icon */}
                           Demograophic Statistics
                         </NavLink>
                       </li>
                       <li>
                         <NavLink
+                        className="nav-link"
                           to="/health"
                           style={{
                             color: page === "health" ? "#46CDD0" : "black",
@@ -255,20 +257,67 @@ export default function Navbar({ page, inscription }) {
                             gap: "8px",
                           }}
                         >
-                          <FontAwesomeIcon icon={faUtensils} style={{ color: "#46CDD0" }} /> {/* Icon */}
+                          <FontAwesomeIcon className="nav-icon" icon={faUtensils} style={{ color: "#46CDD0" }} /> {/* Icon */}
                           Health and Diet Statistics
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                        className="nav-link"
+                          to="/economic"
+                          style={{
+                            color: page === "health" ? "#46CDD0" : "black",
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "8px",
+                          }}
+                        >
+                          <FontAwesomeIcon className="nav-icon" icon={faChartBar} style={{ color: "#46CDD0" }} /> {/* Icon */}
+                          Economic and Social Statistics
+                        </NavLink>
+                      </li>
+
+                      <li>
+                        <NavLink
+                        className="nav-link"
+                          to="/dietary"
+                          style={{
+                            color: page === "health" ? "#46CDD0" : "black",
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "8px",
+                          }}
+                        >
+                          <FontAwesomeIcon className="nav-icon" icon={faDrumstickBite} style={{ color: "#46CDD0" }} /> {/* Icon */}
+                          Dietary Prefences and Frequency
+                        </NavLink>
+                      </li>
+
+                      <li>
+                        <NavLink
+                        className="nav-link"
+                          to="/nutrition"
+                          style={{
+                            color: page === "health" ? "#46CDD0" : "black",
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "8px",
+                          }}
+                        >
+                          <FontAwesomeIcon className="nav-icon" icon={faAppleAlt} style={{ color: "#46CDD0" }} /> {/* Icon */}
+                          Nutritional Insights
                         </NavLink>
                       </li>
                     </ul>
                   </li>
                   <li>
                     <NavLink
-                      to="/marketplace"
+                      to="/survey"
                       style={{
                         color: page === "marketplace" ? "#46CDD0" : "white",
                       }}
                     >
-                      Reports
+                      Survey
                     </NavLink>
                   </li>
                   <li>

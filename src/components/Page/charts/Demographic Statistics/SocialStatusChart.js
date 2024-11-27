@@ -76,7 +76,7 @@ const SocialStatusChart = () => {
         This chart shows the percentage distribution of survey participants
         based on their social status.
       </p>
-      <div className="w-full h-64">
+      <div className="w-full h-full">
         <PolarArea data={chartData} options={chartOptions} />
       </div>
     </div>

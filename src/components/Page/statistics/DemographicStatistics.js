@@ -5,111 +5,93 @@ import CountryRepresentationChart from "../charts/Demographic Statistics/Country
 import SocialStatusChart from "../charts/Demographic Statistics/SocialStatusChart";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
+import backgoundMeals from "../../../assets/images/backgroundMeals.jpg";
+import ChartCard from "../charts/ChartCard";
+import AgeGroupDistributionChart from "../charts/Demographic Statistics/AgeGroupDistributionChart";
+import StateStatisticsChart from "../charts/StateStatisticsChart";
+import AverageChildrenChart from "../charts/Demographic Statistics/AverageChildrenChart";
 
 const DemographicStatistics = () => {
-    return (
-        <>
-            <div className="wrapper">
-                <div>
-                    <header id="header" className='header '>
-                        <div className="menu mr-70 ml-70">
-                            <Navbar />
-                        </div>
-                    </header>
-       
-                    <main>
-                        <section className="hero1 mb-70">
-                            <div className="dashboard-content">
-                                <div className="section">
-                                    <div className="section-left">
-                                        <div className="text">
-                                            <h2 style={{ color: "white" }}>
-                                                Demographic Statistics<br /><br />
-                                            </h2>
-                                        </div>
+  return (
+    <>
+      <div
+        className="wrapper"
+        style={{
+          backgroundImage: `url(${backgoundMeals})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <header id="header" className="header ">
+          <div className="menu mr-70 ml-70">
+            <Navbar />
+          </div>
+        </header>
 
-                                        <div className="about-content" style={{ display: "flex", gap: "20px" }}>
-                                            {/* Gender Statistics Chart */}
+        <main className="main">
+          <section className="hero1 mb-10">
+            <div className="dashboard-content">
+              <div className="section">
+                <div className="section-left">
+                  <div className="text mt-20">
+                    <h2
+                      className="h2 section-title"
+                      style={{
+                        color: "#000000",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      Demographic Statistics
+                    </h2>
+                  </div>
 
-                                            <div
-                                                className="chart-container"
-                                                style={{
-                                                    flex: "1",
-                                                    display: "flex",
-                                                    flexDirection: "column",
-                                                    //justifyContent: "center",
-                                                    alignItems: "center",
-                                                    backgroundColor: "rgba(255, 255, 255, 0.9)",
-                                                    borderRadius: "8px",
-                                                    padding: "10px",
-                                                    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-                                                    opacity: "0.95",
-                                                }}
-                                            >
-                                                <div className="bg-white shadow-lg rounded-lg p-4 transform transition duration-300 hover:scale-105">
-                                                    <GenderStatisticsChart />
-                                                </div>
-                                            </div>
+                  <div
+                    className="about-content flex mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-6"
 
-                                            {/* Social Status Chart */}
-                                            <div
-                                                className="chart-container"
-                                                style={{
-                                                    flex: "1",
-                                                    display: "flex",
-                                                    flexDirection: "column",
-                                                    //justifyContent: "center",
-                                                    alignItems: "center",
-                                                    backgroundColor: "rgba(255, 255, 255, 0.9)",
-                                                    borderRadius: "8px",
-                                                    padding: "10px",
-                                                    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-                                                    opacity: "0.95",
-                                                }}
-                                            >
-                                                <div className="bg-white shadow-lg rounded-lg p-4 transform transition duration-300 hover:scale-105">
-                                                    <SocialStatusChart />
-                                                </div>
-                                            </div>
+                  // className="about-content"
+                  // style={{ display: "flex", gap: "20px" }}
+                  >
+                    {/* Gender Statistics */}
+                    <ChartCard >
+                      <GenderStatisticsChart />
+                    </ChartCard>
 
-                                            {/* Country Representation Chart */}
-                                            <div
-                                                className="chart-container"
-                                                style={{
-                                                    flex: "1",
-                                                    display: "flex",
-                                                    flexDirection: "column",
-                                                    //justifyContent: "center",
-                                                    alignItems: "center",
-                                                    backgroundColor: "rgba(255, 255, 255, 0.9)",
-                                                    borderRadius: "8px",
-                                                    padding: "10px",
-                                                    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-                                                    opacity: "0.95",
-                                                }}
-                                            >
-                                                <div className="bg-white shadow-lg rounded-lg p-4 transform transition duration-300 hover:scale-105">
-                                                    <CountryRepresentationChart />
-                                                </div>
-                                            </div>
-                                            
+                    {/* Social Status */}
+                    <ChartCard >
+                      <SocialStatusChart />
+                    </ChartCard>
 
+                    {/* Country Representation */}
+                    <ChartCard >
+                      <CountryRepresentationChart />
+                    </ChartCard>
 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </main>
+                    {/* Age Group Distribution */}
+                    <ChartCard >
+                      <AgeGroupDistributionChart />
+                    </ChartCard>
 
+                    {/* Average Children */}
+                    <ChartCard >
+                      <AverageChildrenChart />
+                    </ChartCard>
 
-                    <Footer />
+                    {/* State Statistics */}
+                    <ChartCard >
+                      <StateStatisticsChart />
+                    </ChartCard>
 
+                  </div>
                 </div>
+              </div>
             </div>
-        </>
+          </section>
+        </main>
 
-    );
+        <Footer />
+      </div>
+    </>
+  );
 };
 
 export default DemographicStatistics;

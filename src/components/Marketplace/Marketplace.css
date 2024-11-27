@@ -605,6 +605,7 @@
   padding: 10px 15px;
   border: 1px solid var(--golden-puppy);
   border-radius: 4px;
+  background: transparent;
 }
 
 .btn-primary {
@@ -627,24 +628,37 @@
    * #HERO
   \*-----------------------------------*/
 
+.map-section{
+  padding: 60px 0;
+  margin-top: 1%;
+  height: 100%;
+  background: var(--white);
+
+}
+
+.map-container {
+  min-height: 100vw;
+  max-width: 200vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  gap: 25px;
+}
+
+
 .hero {
   padding: 60px 0;
   height: 695px;
-
-
 }
 
 .hero1 {
   padding: 40px 0;
-
-
-
 }
 
 .hero-content {
   text-align: center;
-  margin-bottom: 50px;
-  z-index: 5;
+  z-index: 50;
+  margin-bottom: 0;
 }
 
 .hero-title {
@@ -653,16 +667,19 @@
 }
 
 .hero-title>span {
-  display: inline-block;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: var(--golden-puppy);
-  -webkit-text-fill-color: transparent;
+  /* display: inline-block; */
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: #1e494e;
+  /* -webkit-text-fill-color: transparent; */
 }
 
 .hero-text {
-  color: var(--white);
+  color: #e1f3f5;
   font-size: var(--fs-7);
+  -webkit-text-stroke-width: 1px;
   margin-bottom: 10px;
+  backdrop-filter: blur(20px);
+  border-radius: 10px;
 }
 
 .btn-group {
@@ -737,7 +754,7 @@
 }
 
 .new-product {
-  background: var(--eerie-black-2);
+  background: var(--white);
   padding: 60px 0;
 }
 
@@ -770,10 +787,11 @@ ol {
 }
 
 .product-card {
-  background: var(--eerie-black-1);
+  background: hsl(40, 90%, 65%);
   padding: 18px;
-  border: 1px solid var(--onyx-2);
+  border: 1px solid #F7DC6F;
   border-radius: 8px;
+  box-shadow: 8px 8px 0 0 var(--golden-puppy);
 }
 
 .product-banner {
@@ -854,7 +872,7 @@ ol {
 }
 
 .product-card:is(:hover, :focus) .product-title {
-  color: white;
+  color: #46CDD0;
 }
 
 .product-meta {
@@ -1279,7 +1297,7 @@ ol {
    * responsive for larger than 768px screen
    */
 
-@media (min-width: 768px) {
+@media (min-width: 100px) {
   /**
      * CUSTOM PROPERTY
      */
@@ -1312,8 +1330,8 @@ ol {
   }
 
   .hero .container1 {
-    min-height: 70vh;
-    max-width: 700px;
+    min-height: 70%;
+    max-width: 90%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     place-items: center;
@@ -1324,10 +1342,6 @@ ol {
     margin: auto 130px;
   }
 
-  .hero-content {
-    text-align: left;
-    margin-bottom: 0;
-  }
 
   .btn-group {
     justify-content: flex-start;
@@ -2790,3 +2804,41 @@ input:focus {
     margin-left: 20px;
   }
 }
+
+@media (max-width: 950px) {
+  .gallery {
+    display: none;
+  }
+  .search-icon {
+    display: none;
+  }
+}
+
+.input-search-size {
+  width: 100%; /* Full width by default */
+  padding-left: 40px; /* Create space for the icon */
+  min-width: 400px; /* Ensure a minimum width on larger screens */
+}
+
+@media only screen and (max-width: 300px) {
+  .input-search-size {
+    min-width: 100%; 
+  }
+}
+
+.custom-btn {
+  height: 40px; 
+  min-width: 100px; 
+}
+
+@media only screen and (max-width: 300px) {
+  .custom-btn {
+    width: 100%;
+  }
+}
+
+
+
+
+
+

@@ -176,7 +176,7 @@ NOTE: This is main stylesheet of template, This file contains the styling for th
 .header.fullWidth .container-fluid { padding: 0 60px; }
 
 /*light*/
-.header.light {  background: #ffffff; position: relative; box-shadow: 0 0 15px rgba(0, 0, 0, 0.05); z-index: 999; }
+.header.light {  background: #141414; position: relative; box-shadow: 0 0 15px rgba(0, 0, 0, 0.05); z-index: 999; }
 .header.light .topbar ul li { color: #323232; }
 .header.light .topbar ul li a { color: #323232; }
 .header.light .mega-menu .menu-links > li > a { color: #323232; }
@@ -257,7 +257,7 @@ NOTE: This is main stylesheet of template, This file contains the styling for th
 /*************************
     header text-dark
 *************************/
-.header.text-dark .topbar ul li { color: #323232; }
+.header.text-dark .topbar ul li { color: #cecece; }
 .header.text-dark .topbar ul li a { color: #323232; }
 .header.text-dark .topbar ul li a:hover { color: #46CDD0; }
 .header.text-dark .mega-menu .menu-links > li > a { color: #323232; }
@@ -2169,8 +2169,8 @@ canvas{-moz-user-select: none; -webkit-user-select: none; -ms-user-select: none;
 body.boxed-layout .wrapper { float: none; width: 1220px; margin: 0 auto; position:relative; background-color: #FFF; box-shadow: 0 0 60px rgba(0,0,0,.1); -moz-box-shadow: 0 0 60px rgba(0,0,0,.1);
     -webkit-box-shadow: 0 0 60px rgba(0,0,0,.1); }
 /*index 01*/
-body.boxed-layout .wrapper .portfolio-title.section-title p { display: none; }
-body.boxed-layout .wrapper .portfolio-title.section-title span { display: none; }
+body.boxed-layout .wrapper .portfolio-title p { display: none; }
+body.boxed-layout .wrapper .portfolio-title span { display: none; }
 
 /*index 02*/
 body.boxed-layout .wrapper .contact-3 .g-map { padding-top: 140%; }
@@ -2437,7 +2437,7 @@ text-align: left;
     top: 0;
     left: 0;
     width: 100%;
-    height: auto;
+    height: 10%;
     z-index: 100;
     margin: 0 auto;
     color:white;

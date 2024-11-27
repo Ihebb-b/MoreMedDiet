@@ -20,7 +20,7 @@ NOTE: This file contains rtl responsive Media Queries of the Template. You can e
 .blog-entry .social strong { margin-right: 0; }
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 500px) {
 
 .page-title, .page-title .page-breadcrumb { text-align: right; }
 .mega-menu .menu-links > li > a i.fa.fa-indicator { right: inherit; left: 20px; }

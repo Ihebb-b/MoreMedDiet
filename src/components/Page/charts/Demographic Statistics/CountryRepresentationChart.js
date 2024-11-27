@@ -74,7 +74,10 @@ const CountryRepresentationChart = () => {
           </div>
 
           {chartData ? (
-            <div className="w-full h-64">
+            <div  style={{
+              width: "90%", 
+              height: "90%", 
+            }}>
               <Pie
                 data={chartData}
                 options={{

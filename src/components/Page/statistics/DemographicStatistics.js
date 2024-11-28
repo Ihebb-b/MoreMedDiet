@@ -20,6 +20,9 @@ const DemographicStatistics = () => {
           backgroundImage: `url(${backgoundMeals})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
+          minHeight: "100vh",
+          margin: "0",
+          padding: "0",
         }}
       >
         <header id="header" className="header ">
@@ -45,11 +48,21 @@ const DemographicStatistics = () => {
                     </h2>
                   </div>
 
-                  <div
-                    className="about-content flex mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-6"
 
+                  {/* <div className="chart-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto px-4"> */}
+                  {/* 
                   // className="about-content"
                   // style={{ display: "flex", gap: "20px" }}
+                  */}
+
+                  <div
+                    className="chart-container"
+                    style={{
+                      display: "grid",
+                      gridTemplateColumns: "repeat(2, 1fr)",
+                      gap: "20px",
+                      padding: "20px",
+                    }}
                   >
                     {/* Gender Statistics */}
                     <ChartCard >
@@ -76,10 +89,8 @@ const DemographicStatistics = () => {
                       <AverageChildrenChart />
                     </ChartCard>
 
-                    {/* State Statistics */}
-                    <ChartCard >
-                      <StateStatisticsChart />
-                    </ChartCard>
+                  
+                   
 
                   </div>
                 </div>

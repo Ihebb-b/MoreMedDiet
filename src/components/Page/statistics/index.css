@@ -1,7 +1,12 @@
 .wrapper {
-    display: flex;
-    flex-direction: column;
+    /*display: flex;
+    flex-direction: column;*/
     min-height: 100vh;
+    width: 100%; /* Ensure it stretches the full width */
+    background-size: cover; /* Cover the area without distortion */
+    background-position: center; /* Center the image */
+    margin: 0; /* Remove any unwanted default margins */
+    padding: 0;
   }
   
   .header {
@@ -10,6 +15,8 @@
     z-index: 10;
     background-color: #f8f9fa;
   }
+
+  
   
   .main {
     flex-grow: 1;

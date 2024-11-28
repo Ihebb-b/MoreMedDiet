@@ -3,6 +3,7 @@ import { Line } from "react-chartjs-2";
 import { Chart as ChartJS } from 'chart.js/auto'
 import "chart.js/auto";
 import { useGetAverageChildrenStatisticsQuery } from "../../../../slices/statsApiSlice";
+import { ResponsiveContainer } from "recharts";
 const AverageChildrenChart = () => {
  
   const { data, isLoading, isError } = useGetAverageChildrenStatisticsQuery();
@@ -43,16 +44,17 @@ const AverageChildrenChart = () => {
   };
 
   return (
-    <div className="w-full h-full flex flex-col items-center">
+    <div className="w-full h-full  flex-col items-center">
       <h2 className="text-lg font-semibold text-center mb-2">
         Average Children per Household
       </h2>
       <p className="text-sm text-gray-600 text-center mb-4">
         Average Children per Household: <strong>{averageChildren.toFixed(2)}</strong>
       </p>
-      <div className="w-full h-64 justify-center">
+      <ResponsiveContainer width="100%" height={250}>
+       
         <Line data={chartData} options={chartOptions} />
-      </div>
+      </ResponsiveContainer>
     </div>
   );
 };

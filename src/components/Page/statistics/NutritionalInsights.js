@@ -1,15 +1,11 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import GenderStatisticsChart from "../charts/Demographic Statistics/GenderStatisticsChart";
-import CountryRepresentationChart from "../charts/Demographic Statistics/CountryRepresentationChart";
-import SocialStatusChart from "../charts/Demographic Statistics/SocialStatusChart";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
 import backgoundMeals from "../../../assets/images/backgroundMeals.jpg";
-import AgeGroupDistributionChart from "../charts/Demographic Statistics/AgeGroupDistributionChart";
-import AverageChildrenChart from "../charts/Demographic Statistics/AverageChildrenChart";
+import ActivityDietCorrelationChart from "../charts/Nutrition/ActivityDietCorrelationChart ";
+import FastFoodConsumptionChart from "../charts/Nutrition/FastFoodConumptionChart";
 
-const DemographicStatistics = () => {
+const NutritionalInsights = () => {
   return (
     <>
       <div
@@ -39,7 +35,7 @@ const DemographicStatistics = () => {
                         fontWeight: "bold",
                       }}
                     >
-                      Demographic Statistics
+                      Nutritional Insights Statistics
                     </h2>
                   </div>
 
@@ -49,27 +45,13 @@ const DemographicStatistics = () => {
             <div className="chart-container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {/* Always-visible Charts */}
               <div className="chart bg-white shadow-lg rounded-lg p-4 transform transition duration-300 hover:scale-105">
-                <GenderStatisticsChart />
-              </div>
-              <div className="chart bg-white shadow-lg rounded-lg p-4 transform transition duration-300 hover:scale-105">
-                <AgeGroupDistributionChart />
-              </div>
-              <div className="chart bg-white shadow-lg rounded-lg p-4 transform transition duration-300 hover:scale-105">
-              <SocialStatusChart />
+                <ActivityDietCorrelationChart/>
               </div>
 
               <div className="chart bg-white shadow-lg rounded-lg p-4 transform transition duration-300 hover:scale-105">
-              <AverageChildrenChart />
+                <FastFoodConsumptionChart/>
               </div>
-
-              <div className="chart bg-white shadow-lg rounded-lg p-4 transform transition duration-300 hover:scale-105">
-              <CountryRepresentationChart/>
-              </div>
-
-
-
-
-
+             
 
 
 
@@ -86,4 +68,4 @@ const DemographicStatistics = () => {
   );
 };
 
-export default DemographicStatistics;
+export default NutritionalInsights;

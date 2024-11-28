@@ -1,4 +1,3 @@
-// AgeGroupDistributionChart.js
 import React from "react";
 import {
   BarChart,
@@ -10,25 +9,27 @@ import {
   CartesianGrid,
   Legend,
 } from "recharts";
-import { useGetAgeGroupDistributionQuery } from "../../../../slices/statsApiSlice";
+import { useGetIncomeDistributionQuery } from "../../../../slices/statsApiSlice";
 
-const AgeGroupDistributionChart = () => {
-  const { data, error, isLoading } = useGetAgeGroupDistributionQuery();
+const IncomeDistributionChart = () => {
+  const { data, error, isLoading } = useGetIncomeDistributionQuery();
 
+  // Transform the data into chart-friendly format
   const chartData =
-    data?.ageGroups.map((ageGroup) => ({
-      ageGroup: ageGroup.ageGroup,
-      percentage: parseFloat(ageGroup.percentage.toFixed(2)),
-    })) || [];
+    data?.incomeDistribution
+      ? Object.entries(data.incomeDistribution).map(([incomeLevel, percentage]) => ({
+          incomeLevel,
+          percentage: parseFloat(percentage),
+        }))
+      : [];
 
   return (
-    <div className="w-full h-full  flex-col items-center">
+    <div className="w-full h-full flex-col items-center">
       <h2 className="text-lg font-semibold text-center mb-2">
-        Age Group Distribution
+        Income Distribution
       </h2>
       <p className="text-sm text-gray-600 text-center mb-4">
-        This chart shows the distribution of various age groups in the surveyed
-        population.
+        This chart shows the distribution of income levels in the surveyed population.
       </p>
       {isLoading ? (
         <p>Loading...</p>
@@ -41,11 +42,11 @@ const AgeGroupDistributionChart = () => {
             margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
           >
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="ageGroup" />
+            <XAxis dataKey="incomeLevel" />
             <YAxis />
             <Tooltip />
             <Legend />
-            <Bar dataKey="percentage" fill="#82ca9d" />
+            <Bar dataKey="percentage" fill="#8884d8" />
           </BarChart>
         </ResponsiveContainer>
       )}
@@ -53,4 +54,4 @@ const AgeGroupDistributionChart = () => {
   );
 };
 
-export default AgeGroupDistributionChart;
+export default IncomeDistributionChart;

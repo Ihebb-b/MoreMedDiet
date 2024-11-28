@@ -8,8 +8,9 @@ import Footer from "../Footer";
 import backgoundMeals from "../../../assets/images/backgroundMeals.jpg";
 import AgeGroupDistributionChart from "../charts/Demographic Statistics/AgeGroupDistributionChart";
 import AverageChildrenChart from "../charts/Demographic Statistics/AverageChildrenChart";
+import PizzaConsumptionChart from "../category/PizzaConsumptionChart";
 
-const DemographicStatistics = () => {
+const Pizza = () => {
   return (
     <>
       <div
@@ -39,40 +40,23 @@ const DemographicStatistics = () => {
                         fontWeight: "bold",
                       }}
                     >
-                      Demographic Statistics
+                      Pizza Consumption
                     </h2>
+                    <p style={{
+                        color: "#000000",
+                        fontWeight: "bold",
+                        backdropFilter: "blur(30px)",
+                      }}>Based on survey responses, this chart shows the pizza consumption by city.</p>
                   </div>
 
                  
 
                      {/* Chart Section */}
-            <div className="chart-container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* Always-visible Charts */}
-              <div className="chart bg-white shadow-lg rounded-lg p-4 transform transition duration-300 hover:scale-105">
-                <GenderStatisticsChart />
-              </div>
-              <div className="chart bg-white shadow-lg rounded-lg p-4 transform transition duration-300 hover:scale-105">
-                <AgeGroupDistributionChart />
-              </div>
-              <div className="chart bg-white shadow-lg rounded-lg p-4 transform transition duration-300 hover:scale-105">
-              <SocialStatusChart />
-              </div>
-
-              <div className="chart bg-white shadow-lg rounded-lg p-4 transform transition duration-300 hover:scale-105">
-              <AverageChildrenChart />
-              </div>
-
-              <div className="chart bg-white shadow-lg rounded-lg p-4 transform transition duration-300 hover:scale-105">
-              <CountryRepresentationChart/>
-              </div>
-
-
-
-
-
-
-
-
+                     <div className="chart-container mx-auto px-4 flex justify-center items-center mt-10">
+                     {/* Always-visible Charts */}
+                     <div className="chart bg-white shadow-lg rounded-lg p-4 transform transition duration-300 hover:scale-105 w-full lg:w-[80%] xl:w-[70%] h-[500px] md:h-[600px]">
+                     <PizzaConsumptionChart />
+              </div>    
                   </div>
                 </div>
               </div>
@@ -86,4 +70,4 @@ const DemographicStatistics = () => {
   );
 };
 
-export default DemographicStatistics;
+export default Pizza;

@@ -34,6 +34,15 @@ export default function Home() {
     setSelectedState(state);
   };
 
+  const buttons = [
+    { label: "Sport practicing", path: "/sport-practicing" },
+    { label: "Healthiest foods", path: "/healthiest-foods" },
+    { label: "Pizza consumed", path: "/pizza" },
+    { label: "Climate and foods", path: "/climate-and-foods" },
+    { label: "Gender distribution", path: "/gender-distribution" },
+    { label: "Traditional foods", path: "/traditional-foods" },
+  ];
+
   useEffect(() => {
     if (searchQuery.trim() && allSuggestions) {
       const combinedSuggestions = [
@@ -81,8 +90,8 @@ export default function Home() {
     if (isInitialLoad) {
       handleStateClick("Tunisia");
       setIsInitialLoad(false); // Ensure this runs only once
-  }
-}, [handleStateClick, isInitialLoad]);
+    }
+  }, [handleStateClick, isInitialLoad]);
 
   const handleSuggestionClick = (suggestion) => {
     setSearchQuery(suggestion);
@@ -115,7 +124,7 @@ export default function Home() {
               <Navbar page="home" inscription={inscription} />
             </div>
           </header>
-       
+
           <main>
             <article>
               {/* Hero and Search Bar Section */}
@@ -136,12 +145,12 @@ export default function Home() {
                     {/* Search bar and button with enhanced styling */}
                     <div className="d-flex flex-column flex-md-row mb-4 gap-2 w-full">
                       <div className="relative w-full">
-                        <i
+                        {/* <i
                           className="search-icon fa fa-search position-absolute  left-3 top-1/2 transform -translate-y-1/3 "
                           style={{
                             top: "60.5%",
                           }}
-                        ></i>
+                        ></i> */}
                         <input
                           type="text"
                           className="input-search-size  py-2 pl-30 pr-4 border rounded border-gray-300 shadow-sm rounded-lg focus:outline-none focus:ring focus:ring-gray-500 text-gray-700"
@@ -187,7 +196,7 @@ export default function Home() {
                     {/* <div class="btn-group">
                       <button class="btn btn-primary">Explore more</button>
                     </div> */}
-                    <div className="mt-10  flex flex-wrap justify-center gap-2">
+                    {/* <div className="mt-10  flex flex-wrap justify-center gap-2">
                       {[
                         "Sport practicing",
                         "Healthiest foods",
@@ -206,9 +215,22 @@ export default function Home() {
                           {filter}
                         </button>
                       ))}
+                    </div> */}
+
+                    <div className="mt-10 flex flex-wrap justify-center gap-2">
+                      {buttons.map((button, index) => (
+                        <button
+                          key={index}
+                          className="custom-btn text-white rounded transition duration-300"
+                          style={{ height: "40px" }}
+                          onClick={() => navigate(button.path)} // Navigate to the corresponding path
+                        >
+                          {button.label}
+                        </button>
+                      ))}
                     </div>
 
-                    
+
                   </div>
 
                   <div class="gallery">
@@ -259,7 +281,7 @@ export default function Home() {
               </section>
 
 
-            {/*  Map section */}
+              {/*  Map section */}
               <section
                 className="map-section"
                 style={{
@@ -268,7 +290,7 @@ export default function Home() {
                   backgroundPosition: "center",
                 }}
               >
-                <div className="container1 container mt-80">
+                <div className="container1 container">
                   <div className="section-header-wrapper">
                     <h2
                       className="h2 section-title"
@@ -511,7 +533,7 @@ export default function Home() {
                     >
                       Most viewed Meals
                     </h2>
-                    <NavLink to="/survey">
+                    <NavLink to="/marketplace">
                       <button class="custom-btn">View all</button>
                     </NavLink>
                   </div>
@@ -546,7 +568,7 @@ export default function Home() {
                     >
                       Explore Statistics
                     </h2>
-                    <NavLink to="/survey">
+                    <NavLink to="/nutritional">
                       <button class="custom-btn">View all</button>
                     </NavLink>
                   </div>

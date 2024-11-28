@@ -86,6 +86,8 @@
     grid-template-columns: repeat(2, 1fr); /* Responsive grid */
     gap: 20px; /* Space between cards */
     padding: 20px;
+    align-items: center;
+    justify-content: center;
   }
   @media (max-width: 768px) {
     .chart-container {
@@ -129,6 +131,14 @@
 .chart-card svg {
   max-width: 100%; /* Ensure charts resize properly */
   max-height: 100%; /* Prevent charts from overflowing */
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-bottom: 20px;
+  }
+
+
 }
   
   

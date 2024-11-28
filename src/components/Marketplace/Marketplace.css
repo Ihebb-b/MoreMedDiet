@@ -630,9 +630,10 @@
 
 .map-section{
   padding: 60px 0;
-  margin-top: 1%;
-  height: 100%;
+  margin-top: 13%;
   background: var(--white);
+  padding-top: 3%; /* Add padding above the map section */
+  min-height: 90%; /* Ensure the map section has a visible height */
 
 }
 
@@ -672,6 +673,8 @@
   -webkit-text-stroke-color: #1e494e;
   /* -webkit-text-fill-color: transparent; */
 }
+
+
 
 .hero-text {
   color: #e1f3f5;
@@ -1267,9 +1270,9 @@ ol {
      * HERO
      */
 
-  .hero .container1 {
+  /* .hero .container1 {
     max-width: 450px;
-  }
+  } */
 
   /**
      * NEW PRODUCT, ABOUT, EXPLORE PRODUCT, TOP SELLER
@@ -1327,6 +1330,8 @@ ol {
 
   .hero {
     padding: 100px 0;
+    padding-bottom: 40px;
+
   }
 
   .hero .container1 {
@@ -1403,11 +1408,11 @@ ol {
   /**
      * HERO
      */
-
+/* 
   .hero .container1 {
     max-width: 950px;
     gap: 20px;
-  }
+  } */
 
   .hero-title,
   .hero-text {

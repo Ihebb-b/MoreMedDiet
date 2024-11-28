@@ -6,6 +6,8 @@ import { Modal, Button } from 'react-bootstrap';
 import Navbar from '../Page/Navbar';
 import Footer from '../Page/Footer';
 import { Select } from "antd";
+import backgoundMeals from "../../assets/images/backgroundMeals.jpg";
+
 
 
 export default function Marketplace({ page }) {
@@ -447,71 +449,27 @@ export default function Marketplace({ page }) {
 
 
 
-                    <div class="section ">
+                    <div class="section "
+                    style={{
+                      backgroundImage: `url(${backgoundMeals})`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                    }}>
 
                       <div class="section-left">
 
-                        <div class="banner flex1 flex-sb">
-
-                          <div class="text ">
-                            <h2 style={{ color: "white" }}>
-                              Browse Marketplace<br /><br />
-                            </h2>
-
-
-
-
-                            <div id="search-wrapper1" class='mb-4'>
-
-
-                              <i class="search-icon fa fa-search"></i>
-
-                              <input type="text" class="placeholder " id="search" placeholder="Search..." value={searchTerm} style={{ width: "32%" }}
-                                onChange={handleSearch} />
-
-
-                            </div>
-                            <div class="" style={{ margin: "auto 110px" }}>
-                              <div class="row ">
-                                <div class="col-lg-4 col-xd-12">
-                                  <select class="form-select" aria-label="Default select example">
-                                    <option selected>Par plat</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                  </select>
-                                </div>
-                                <div class="col-lg-4 col-xd-12">
-                                  <select class="form-select" aria-label="Default select example">
-                                    <option selected>Par restaurant</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                  </select>
-                                </div>
-                                <div class="col-lg-4 col-xd-12">
-                                  <select class="form-select" aria-label="Default select example">
-                                    <option selected>Par chef</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                  </select>
-                                </div></div>
-                            </div>
-                          </div>
-
-
-                        </div>
-
                         <div class="container mt-40 ">
-                          <div class="trending heading flex flex-sb  ">
-                            <h5 class="text-white" >Selected Products : <span class="theme-color">6</span></h5>
-                            <p> <select class="form-select" aria-label="Default select example" style={{ fontSize: "15px" }}>
-                              <option selected>By rating</option>
-                              <option value="1">Prix Ascendant </option>
-                              <option value="2">Prix Descendant</option>
-                            </select></p>
-                          </div>
+                        <div className="text mt-20">
+                    <h2
+                      className="h2 section-title"
+                      style={{
+                        color: "#000000",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      Most Viewed Meals
+                    </h2>
+                  </div>
 
 
 

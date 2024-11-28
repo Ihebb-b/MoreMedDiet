@@ -28,6 +28,11 @@ import Dashboard from './components/Dashboard/Dashboard.js';
 import MyRecipes from './components/Chefs/MyRecipes.js';
 import DemographicStatistics from './components/Page/statistics/DemographicStatistics.js';
 import HealthAndDiet from './components/Page/statistics/HealthAndDiet.js';
+import DietaryPreferences  from './components/Page/statistics/DietaryPreferences.js';
+import EconomicAndSocial from './components/Page/statistics/EconomicAndSocial.js';
+import NutritionalInsights
+ from './components/Page/statistics/NutritionalInsights.js';
+import Pizza from './components/Page/statistics/Pizza.js';
 function App() {
   return (
     <div className="App">
@@ -37,6 +42,10 @@ function App() {
           <Route path="/marketplace" element={<Marketplace/>}/>
           <Route path="/demographic" element={<DemographicStatistics/>}/>
           <Route path="/health" element={<HealthAndDiet/>}/>
+          <Route path="/dietary" element={<DietaryPreferences/>}/>
+          <Route path="/economic" element={<EconomicAndSocial/>}/>
+          <Route path="/nutritional" element={<NutritionalInsights/>}/>
+          <Route path="/pizza" element={<Pizza/>}/>
           <Route path="/detailProduct" element={<DetailProduct/>}/>
           <Route path="/cart" element={<Cart/>}/>
           <Route path="/profile" element={<Profile/>}/>

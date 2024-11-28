@@ -1,5 +1,7 @@
 import React from "react";
 import { PolarArea } from "react-chartjs-2";
+import { ResponsiveContainer } from "recharts";
+
 import {
     Chart as ChartJS,
     RadialLinearScale,
@@ -76,9 +78,9 @@ const SocialStatusChart = () => {
         This chart shows the percentage distribution of survey participants
         based on their social status.
       </p>
-      <div className="w-full h-full">
+      <ResponsiveContainer width="100%" height={250}>
         <PolarArea data={chartData} options={chartOptions} />
-      </div>
+        </ResponsiveContainer>
     </div>
   );
 };

@@ -90,6 +90,43 @@ export const statsApiSlice = apiSlice.injectEndpoints({
       providesTags: ["PhysicalActivityRatio"],
     }),
 
+    //Economic Statistics
+
+    getIncomeDistribution: builder.query({
+      query: () => `${USERS_URL}/incomeDistribution`,
+      providesTags: ["IconcomeDistribution"],
+    }),
+
+    getIncomeDietCorrelation: builder.query({
+      query: () => `${USERS_URL}/incomeDietCorrelation`,
+      providesTags: ["IncomeDietCorrelation"],
+    }),
+
+    getEatingOutVsCooking: builder.query({
+      query: () => `${USERS_URL}/eatingOutVsCooking`,
+      providesTags: ["EatingOutVsCooking"],
+    }),
+
+    calculateActivityDietCorrelation: builder.query({
+      query: () => `${USERS_URL}/calculateActivityDietCorrelation`,
+      providesTags: ["ActivityDietCorrelation"],
+    }),
+
+    calculateFastFoodConsumptionFrequency: builder.query({
+      query: () => `${USERS_URL}/calculateFastFoodConsumptionFrequency`,
+      providesTags: ["FastFoodConsumptionFrequency"],
+    }),
+
+    getDietAgeCorrelation: builder.query({
+      query: () => `${USERS_URL}/dietAgeCorrelation`,
+      providesTags: ["DietAgeCorrelation"],
+    }),
+
+    getPizza: builder.query({
+      query: () => `${USERS_URL}/pizza`,
+      providesTags: ["Pizza"],
+    })
+
 
 
   }),
@@ -112,4 +149,11 @@ export const {
   useGetStatisticsVegetarianVeganPercentageQuery,
   useGetPhysicalActivityRatioQuery,
   useGetParticipantsByStateQuery,
+  useGetIncomeDistributionQuery,
+  useGetIncomeDietCorrelationQuery,
+  useGetEatingOutVsCookingQuery,
+  useCalculateActivityDietCorrelationQuery,
+  useCalculateFastFoodConsumptionFrequencyQuery,
+  useGetDietAgeCorrelationQuery,
+  useGetPizzaQuery,
 } = statsApiSlice;

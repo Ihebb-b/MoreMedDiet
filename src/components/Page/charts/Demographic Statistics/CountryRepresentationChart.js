@@ -5,6 +5,7 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { useGetCountryRepresentationQuery } from "../../../../slices/statsApiSlice";
 
   import "chart.js/auto";
+import { ResponsiveContainer } from "recharts";
 
 const CountryRepresentationChart = () => {
   const { data, error, isLoading } = useGetCountryRepresentationQuery();
@@ -74,10 +75,8 @@ const CountryRepresentationChart = () => {
           </div>
 
           {chartData ? (
-            <div  style={{
-              width: "90%", 
-              height: "90%", 
-            }}>
+             <div className="w-full" style={{ height: 250 }}>
+              <ResponsiveContainer width="100%" height="100%">
               <Pie
                 data={chartData}
                 options={{
@@ -96,6 +95,7 @@ const CountryRepresentationChart = () => {
                   },
                 }}
               />
+               </ResponsiveContainer>
             </div>
           ) : (
             <p className="text-center text-gray-500">

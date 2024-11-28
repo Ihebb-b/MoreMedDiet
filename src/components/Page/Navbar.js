@@ -296,7 +296,7 @@ export default function Navbar({ page, inscription }) {
                       <li>
                         <NavLink
                         className="nav-link"
-                          to="/nutrition"
+                          to="/nutritional"
                           style={{
                             color: page === "health" ? "#46CDD0" : "black",
                             display: "flex",
